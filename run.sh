@@ -1,7 +1,7 @@
 #! /usr/bin/zsh
 
 initial=$(pwd)
-./compile.sh
+./build.sh
 cd ./bin
 ./CRay
 cd $initial
