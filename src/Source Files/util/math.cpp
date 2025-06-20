@@ -1,5 +1,8 @@
 #include <util/math.hpp>
 
+// Std includes
+#include <cmath>
+
 using namespace math;
 
 Vec3::Vec3() {

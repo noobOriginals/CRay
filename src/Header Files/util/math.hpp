@@ -3,7 +3,6 @@
 #include <util/types.h>
 
 // Std includes
-#include <cmath>
 #include <string>
 
 namespace math {
