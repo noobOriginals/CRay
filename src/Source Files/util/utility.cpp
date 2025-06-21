@@ -115,9 +115,8 @@ float32 randomFloat() {
     return distro(randGen);
 }
 float32 randomFloat(float32 min, float32 max) {
-    thread_local std::mt19937 generator;
-    std::uniform_real_distribution<float32> distro(0.0f, 1.0f);
-    return min + distro(randGen) * (max - min);
+    std::uniform_real_distribution<float32> distro(min, max);
+    return distro(randGen);
 }
 float32 randomGaussian() {
     std::normal_distribution<float32> distro(0.0f, 1.0f);
