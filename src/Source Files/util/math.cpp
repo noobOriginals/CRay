@@ -64,10 +64,10 @@ Vec3 Vec3::normalize() {
         return Vec3(x / length, y / length, z / length);
     }
 }
-void Vec3::copy(Vec3 v) {
-    x = v.x;
-    y = v.y;
-    z = v.z;
+void Vec3::copy(Vec3 other) {
+    x = other.x;
+    y = other.y;
+    z = other.z;
 }
 std::string Vec3::toString() {
     return std::to_string(x) + "\n" + std::to_string(y) + "\n" + std::to_string(z);

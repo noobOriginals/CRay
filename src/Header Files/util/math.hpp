@@ -27,7 +27,7 @@ public:
     float32 len();
     float32 lenSq();
     Vec3 normalize();
-    void copy(Vec3 v);
+    void copy(Vec3 other);
     std::string toString();
 };
 
