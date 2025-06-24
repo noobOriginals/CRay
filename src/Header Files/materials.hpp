@@ -4,6 +4,7 @@
 
 // Local includes
 #include <util/math.hpp>
+#include <ray.hpp>
 #include <hitutil.hpp>
 
 namespace material {
