@@ -17,7 +17,7 @@ class Material {
 public:
     virtual ~Material() = default;
 
-    virtual bool scatter(Ray rayIn, HitPoint& hitPoint, math::Vec3& attenuation, Ray& scatteredRay);
+    virtual bool scatter(Ray rayIn, HitPoint& hitPoint, math::Vec3& attenuation, Ray& scatteredRay) const = 0;
 };
 class HitPoint {
 public:
@@ -45,7 +45,7 @@ class Hittable {
 public:
     virtual ~Hittable() = default;
 
-    virtual bool hitRay(Ray ray, util::Interval rayT, HitPoint& hitPoint);
+    virtual bool hitRay(Ray ray, util::Interval rayT, HitPoint& hitPoint) const = 0;
 };
 
 }
