@@ -11,7 +11,7 @@ public:
     Ray(math::Vec3 origin, math::Vec3 direction);
     math::Vec3 at(float32 t);
     void setOrigin(math::Vec3 origin);
-    void setDirection(math::Vec3 direction);
+    void setDir(math::Vec3 direction);
     void copy(Ray other);
     math::Vec3 getOrigin();
     math::Vec3 getDir();

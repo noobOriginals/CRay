@@ -6,6 +6,7 @@ using namespace math;
 HitPoint::HitPoint() {
     point = Vec3();
     norm = Vec3();
+    mat = nullptr;
     t = 0.0f;
     frontFace = false;
 }
@@ -19,7 +20,7 @@ void HitPoint::setPoint(math::Vec3 point) {
 void HitPoint::setNormal(math::Vec3 normal) {
     norm = normal;
 }
-void HitPoint::setMaterial(Material material) {
+void HitPoint::setMaterial(Material* material) {
     mat = material;
 }
 void HitPoint::setT(float32 t) {
@@ -34,7 +35,7 @@ math::Vec3 HitPoint::getPoint() {
 math::Vec3 HitPoint::getNormal() {
     return norm;
 }
-Material HitPoint::getMaterial() {
+Material* HitPoint::getMaterial() {
     return mat;
 }
 float32 HitPoint::getT() {

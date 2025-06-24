@@ -13,7 +13,7 @@ math::Vec3 Ray::at(float32 t) {
 void Ray::setOrigin(math::Vec3 origin) {
     this->origin = origin;
 }
-void Ray::setDirection(math::Vec3 direction) {
+void Ray::setDir(math::Vec3 direction) {
     dir = direction;
 }
 void Ray::copy(Ray other) {
