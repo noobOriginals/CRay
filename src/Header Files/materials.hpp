@@ -12,7 +12,7 @@ namespace material {
 class Lambertian : public hitutil::Material {
 public:
     Lambertian(math::Vec3 albedo);
-    bool scatter(Ray rayIn, hitutil::HitPoint& hitPoint, math::Vec3& attenuation, Ray& scatteredRay) const override;
+    bool scatter(Ray rayIn, hitutil::HitPoint& hitPoint, math::Vec3& attenuation, Ray& scatteredRay) override;
     math::Vec3 getAlbedo();
 
 private:
@@ -21,7 +21,7 @@ private:
 class Metal : public hitutil::Material {
 public:
     Metal(math::Vec3 albedo, float32 fuzz);
-    bool scatter(Ray rayIn, hitutil::HitPoint& hitPoint, math::Vec3& attenuation, Ray& scatteredRay) const override;
+    bool scatter(Ray rayIn, hitutil::HitPoint& hitPoint, math::Vec3& attenuation, Ray& scatteredRay) override;
     math::Vec3 getAlbedo();
     float32 getFuzz();
 
@@ -32,7 +32,7 @@ private:
 class Dielectric : public hitutil::Material {
 public:
     Dielectric(math::Vec3 albedo, float32 refractionIdx);
-    bool scatter(Ray rayIn, hitutil::HitPoint& hitPoint, math::Vec3& attenuation, Ray& scatteredRay) const override;
+    bool scatter(Ray rayIn, hitutil::HitPoint& hitPoint, math::Vec3& attenuation, Ray& scatteredRay) override;
     math::Vec3 getAlbedo();
     float32 getRefIdx();
 

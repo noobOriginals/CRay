@@ -12,7 +12,7 @@ namespace object {
 class Sphere : public hitutil::Hittable {
 public:
     Sphere(math::Vec3 center, float32 radius, hitutil::Material* material);
-    bool hitRay(Ray ray, util::Interval rayT, hitutil::HitPoint& hitPoint) const override;
+    bool hitRay(Ray ray, util::Interval rayT, hitutil::HitPoint& hitPoint) override;
     math::Vec3 getCenter();
     float32 getRadius();
 

@@ -50,6 +50,7 @@ bool isNearZero(math::Vec3 v);
 math::Vec3 reflect(math::Vec3 v, math::Vec3 normal);
 math::Vec3 refract(math::Vec3 uv, math::Vec3 normal, float32 ratio);
 float32 reflectance(float32 cosine, float32 refIdx);
+int64 getNanoTime();
 
 }
 

@@ -12,7 +12,7 @@ using namespace util;
 Lambertian::Lambertian(math::Vec3 albedo) {
     this->albedo = albedo;
 }
-bool Lambertian::scatter(Ray rayIn, hitutil::HitPoint& hitPoint, math::Vec3& attenuation, Ray& scatteredRay) const {
+bool Lambertian::scatter(Ray rayIn, hitutil::HitPoint& hitPoint, math::Vec3& attenuation, Ray& scatteredRay) {
     math::Vec3 direction = hitPoint.getNormal().add(randomUnitVec3());
     if (isNearZero(direction)) {
         direction = hitPoint.getNormal();
@@ -30,7 +30,7 @@ Metal::Metal(math::Vec3 albedo, float32 fuzz) {
     this->albedo = albedo;
     this->fuzz = fuzz;
 }
-bool Metal::scatter(Ray rayIn, hitutil::HitPoint& hitPoint, math::Vec3& attenuation, Ray& scatteredRay) const {
+bool Metal::scatter(Ray rayIn, hitutil::HitPoint& hitPoint, math::Vec3& attenuation, Ray& scatteredRay) {
     math::Vec3 direction = reflect(rayIn.getDir(), hitPoint.getNormal());
     direction = direction.normalize().add(randomUnitVec3().mul(fuzz));
     scatteredRay.setOrigin(hitPoint.getPoint());
@@ -49,7 +49,7 @@ Dielectric::Dielectric(math::Vec3 albedo, float32 refractionIdx) {
     this->albedo = albedo;
     refIdx = refractionIdx;
 }
-bool Dielectric::scatter(Ray rayIn, hitutil::HitPoint& hitPoint, math::Vec3& attenuation, Ray& scatteredRay) const {
+bool Dielectric::scatter(Ray rayIn, hitutil::HitPoint& hitPoint, math::Vec3& attenuation, Ray& scatteredRay) {
     attenuation.copy(albedo);
     float32 ratio = hitPoint.getFrontFace() ? (1.0f / refIdx) : refIdx;
 

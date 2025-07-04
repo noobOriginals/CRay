@@ -5,6 +5,7 @@
 #include <limits>
 #include <random>
 #include <thread>
+#include <chrono>
 
 using namespace util;
 
@@ -157,6 +158,10 @@ float32 reflectance(float32 cosine, float32 refIdx) {
     float32 r0 = (1.0f - refIdx) / (1.0f + refIdx);
     r0 = r0 * r0;
     return r0 + (1.0f - r0) * std::pow(1.0f - cosine, 5.0f);
+}
+int64 getNanoTime() {
+    auto now = std::chrono::high_resolution_clock::now();
+    return std::chrono::duration_cast<std::chrono::nanoseconds>(now.time_since_epoch()).count();
 }
 
 }

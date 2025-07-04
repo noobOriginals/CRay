@@ -20,6 +20,7 @@ public:
 
 class Image {
 public:
+    Image(){}
     Image(int32 width, int32 height);
     ~Image();
     Pixel get(int32 x, int32 y);

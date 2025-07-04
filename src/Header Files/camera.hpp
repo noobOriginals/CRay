@@ -7,6 +7,7 @@
 
 class Camera {
 public:
+    Camera(){}
     Camera(math::Vec3 pos, math::Vec3 lookat, float32 aspectRatio, float32 hfov, int32 pixelsX);
     math::Vec3 getPixelPos(int32 x, int32 y);
     math::Vec3 getPos();
