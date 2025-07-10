@@ -7,6 +7,7 @@
 
 // Local includes
 #include <util/math.hpp>
+#include <util/utility.hpp>
 
 namespace img {
 
