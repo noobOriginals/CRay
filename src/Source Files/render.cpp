@@ -109,7 +109,7 @@ math::Vec3 Render::raycast(Ray ray, int32 depth, World world) {
 }
 
 void Render::dispatch(int32 idxOffset, int32 stride, World world) {
-    ThreadedExecution* exec = (ThreadedExecution*)malloc(sizeof(ThreadedExecution));
+    ThreadedExecution* exec = (ThreadedExecution*)calloc(1, sizeof(ThreadedExecution));
     *exec = ThreadedExecution();
     execs.push_back(exec);
     exec->execute([&]() {
